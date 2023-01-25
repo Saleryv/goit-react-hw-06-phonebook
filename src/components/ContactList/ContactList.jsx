@@ -1,13 +1,11 @@
 import { ContactItem } from './ContactItem/ContactItem';
-// import PropTypes from 'prop-types';
 import css from '../ContactList/ContactList.module.css';
 import  { useSelector }  from 'react-redux';
 import { getContacts, getFilter } from 'redux/contacts/selectors';
 
-export const ContactList = ({ contactDelete }) => {
+export const ContactList = () => {
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
-  // `console.log(contacts)`
   const filterContact = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
@@ -26,14 +24,3 @@ export const ContactList = ({ contactDelete }) => {
     </ul>
   );
 };
-
-// ContactList.propTypes = {
-//   contactDelete: PropTypes.func.isRequired,
-//   contacts: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       id: PropTypes.string.isRequired,
-//       name: PropTypes.string.isRequired,
-//       number: PropTypes.string.isRequired,
-//     }).isRequired
-//   ).isRequired,
-// };

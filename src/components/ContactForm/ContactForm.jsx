@@ -3,7 +3,7 @@ import css from './ContactForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/contactsSlice';
 
-export const ContactForm = ({ contactAdd }) => {
+export const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(state => state.contacts.items);
 
@@ -25,7 +25,6 @@ export const ContactForm = ({ contactAdd }) => {
 
   const onSubmit = e => {
     e.preventDefault();
-    // contactAdd(formData);
     const contactPresent = contacts.filter(
       ({ name: currentName }) =>
         currentName.toLowerCase() === name.toLowerCase()
@@ -82,8 +81,3 @@ export const ContactForm = ({ contactAdd }) => {
       </form>
     );
   }
-
-
-// ContactForm.propTypes = {
-//   contactAdd: PropTypes.func.isRequired,
-// };

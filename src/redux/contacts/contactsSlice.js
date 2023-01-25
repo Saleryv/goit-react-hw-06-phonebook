@@ -26,22 +26,5 @@ const contactsSlice = createSlice({
 });
 
 export const { addContact, setFilter, contactDelete } = contactsSlice.actions;
-
 export default contactsSlice.reducer;
 
-
-// reducers: {
-//     addTask: {
-//       reducer(state, action) {
-//         state.push(action.payload);
-//       },
-//       prepare(text) {
-//         return {
-//           payload: {
-//             text,
-//             id: nanoid(),
-//             completed: false,
-//           },
-//         };
-//       },
-//     },
